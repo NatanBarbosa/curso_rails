@@ -1,24 +1,10 @@
-# README
+# Requisitos
+1. Rodar em sistema linux
+2. Docker engine instalado
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Instalação
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. docker compose build
+2. docker compose up -d
+3. docker compose run web rake db:create
+4. docker compose run web rails db:migrate

@@ -1,0 +1,9 @@
+RAILS db:seed
+db/seeds.rb
+cria as coisas lá a partir do model
+roda 
+>>rails db:seed
+
+RAKE TASKS
+>>rails g task dev setup
+>>rails dev:setup

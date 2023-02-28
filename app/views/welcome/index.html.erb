@@ -1,5 +1,9 @@
-<h1>Seja bem vindo, <%=@nome%>, ao curso <%=@curso%></h1>
-<p>Hoje é dia <%= data_br(Date.today) %></p>
-<p>Você está em ambiente de <strong><%=ambiente_rails%></strong></p>
-
-<%= render "menu" %>
+<div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold"><%= t('welcome') %></h1>
+        <p class="col-md-8 fs-4"><%= t('messages.welcome') %></p>
+        <hr>
+        <p class="fs-4"><%=t('messages.menu')%></p>
+        <%= render "menu" %>
+    </div>
+</div>

@@ -1,3 +1,12 @@
+RAILS GENERATE SCAFFOLD
+1. migration
+2. model
+3. arquivos de teste
+4. rotas
+5. controller
+6. views para cada action (index, new, edit, show)
+7. helper
+
 RAILS db:seed
 db/seeds.rb
 cria as coisas lá a partir do model
@@ -7,3 +16,51 @@ roda
 RAKE TASKS
 >>rails g task dev setup
 >>rails dev:setup
+
+STANDALONE MIGRATIONS
+adicionar coluna mining_type na tabela Coins. Essa coluna referecia para a tabela mining_types
+>>rails g migration AddMiningTypeToCoins mining_type:references
+
+
+RELAÇÕES EM MODELS
+relacionar campo mining_type com o do model Coin
+Coin -> belongs_to :mining_type (uma moeda tem um tipo de mineração)
+MiningType -> has_many :coins (Um tipo de mineração pode pertencer a várias moedas)
+
+
+ASSETS PIPELINES
+comprimir assets javascripts e css
+o "=require tree .", mesmo que comentado, carrega todos os arquivos da pasta (isso é ruim)**
+facilita na hora de minificar os arquivos em produção
+permite colocar código ruby nos js e css, qnd o arquivo termina com .erb
+permite trabalhar com sass e coffeescript
+
+o nodejs serve como runtime(execjs) para rodar o coffeescript
+a gem miniracer tbm serve no lugar do node
+
+caminhos
+app/assets -> arquivos que o rails gera (pelos generates)
+lib/assets -> arquivos que você mesmo criou
+vendor/assets -> bibliotecas de terceiros
+
+**consertando o require tree para pegar somente os arquivos necessários
+consertado no layout.html.erb -> faz o require conforme o nome do controller da página
+permitir que o precompilador do assetspipeline reconheça outros arquivos além de application (config/initializers/assets.rb)
+
+dps de mexer em todos os assets, precisa pre-compilar
+>> rails assets:precompile
+
+se quiser remover esses arquivos compilados
+>> rails assets:clobber
+
+Se vc não compilar, o asset pipeline vai disponibilizar os arquivos de forma virtual (apenas em memória)
+
+
+
+BAIXANDO BIBLIOTECAS COM Yarn
+>> yarn init (cria o package.json)
+>> yarn add <lib>
+application.js -> //=require <lib>
+
+caso projeto de fora 
+>>yarn install

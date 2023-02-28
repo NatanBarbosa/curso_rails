@@ -36,7 +36,16 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+#extra gems
 gem 'pry-rails'
+gem 'tty-spinner'
+gem 'rails-i18n', '~> 5.1'
+
+#rails assets (js libraries)
+#source 'https://rails-assets.org' do
+#  gem 'rails-assets-jquery'
+#  gem 'rails-assets-notifyjs'
+#end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
